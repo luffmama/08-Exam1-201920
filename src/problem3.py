@@ -3,8 +3,8 @@ Exam 1, problem 3.
 
 Authors: David Mutchler, Vibha Alangar, Matt Boutell, Dave Fisher,
          Mark Hays, Amanda Stouder, Aaron Wilkin, their colleagues,
-         and PUT_YOUR_NAME_HERE.
-"""  # TODO: 1. PUT YOUR NAME IN THE ABOVE LINE.
+         and Margaret Luffman.
+"""  # DONE: 1. PUT YOUR NAME IN THE ABOVE LINE.
 
 import testing_helper
 import time
@@ -17,7 +17,7 @@ def main():
 
 
 ###############################################################################
-# TODO: 2.  READ the doc-string for the  sum_of_digits  function defined below.
+# DONE: 2.  READ the doc-string for the  sum_of_digits  function defined below.
 # It is the same  sum_of_digits  function that you have seen before.
 # After you UNDERSTAND the doc-string (JUST the doc-string, NOT the code),
 # ASKING QUESTIONS AS NEEDED, change the above _TODO_ to DONE.
@@ -163,7 +163,7 @@ def problem3a(r, s):
           -- 5 cubed is   125, whose sum of digits is  8, which is NOT odd.
     """
     # -------------------------------------------------------------------------
-    # TODO: 3. Implement and test this function.
+    # DONE: 3. Implement and test this function.
     #          Tests have been written for you (above).
     #
     ###########################################################################
@@ -172,7 +172,12 @@ def problem3a(r, s):
     #    **  use (call) the   sum_of_digits   function
     #    **  that is DEFINED ABOVE.
     ###########################################################################
-
+    c = 0
+    for k in range(s+1-r):
+        cu = (k+r) ** 3
+        if sum_of_digits(cu) % 2 == 1:
+            c = c + (k+r)
+    return c
 
 def run_test_problem3b():
     """ Tests the   problem3b   function. """
@@ -280,10 +285,14 @@ def problem3b(m, r):
            which is approximately 12.020144157845959.
      """
     ###########################################################################
-    # TODO: 4. Implement and test this function.
+    # DONE: 4. Implement and test this function.
     #          Tests have been written for you (above).
     ###########################################################################
-
+    s = 0
+    for k in range(m):
+        term = (k+1)/((r+k)**(k+1))
+        s = s + term
+    return s
 
 ###############################################################################
 # Our tests use the following to print error messages in red.
